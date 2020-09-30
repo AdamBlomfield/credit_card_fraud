@@ -195,7 +195,7 @@ def plot_pr_curve(y_test, y_pred, y_pred_proba, title, save_fig=True):
     plt.plot(recall_scores, precision_scores, marker='.', label='{}'.format(title), lw=5)
     
     # title & axis labels
-    plt.title('Precision-Recall Curve for {}\n'.format(title))
+    plt.title('Precision-Recall Curve for {}\nAUC: {}\n'.format(title, round(auc_value,4)))
     plt.xlabel('Recall')
     plt.xlim(0,1)
     plt.ylabel('Precision')
