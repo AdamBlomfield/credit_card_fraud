@@ -30,6 +30,37 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 
+def top_correlations(df, n, positive=True, negative=True, absolute=False):
+    '''Returns the top correlations of a dataframe, can be absolute values, just positive, or just negative
+    df - DataFrame
+    n - number of correlations to show
+    positive - boolean.  If true will show the positive correlations
+    negative - boolean.  If true will show the negative correlations
+    absolute - boolean.  If true will return absolute correlation values'''
+    
+    # Do we want absolute values?
+    if absolute:
+        c = df.corr().abs()
+    else:
+        c = df.corr()
+    
+    # Sort the dataframe's correlation values
+    s = c.unstack()
+    so = s.sort_values(kind="quicksort")
+    
+    # Used for indexing
+    vars_ = df.shape[1]
+    
+    # Positive correlations
+    if positive:
+        print('Top {} positive correlations:'.format(n))
+        print(so[-vars_-n:-vars_])
+    
+    # Negative correlations
+    if negative:
+        print('\nTop {} negative correlations:'.format(n))
+        print(so[:n])
+
 
 def convert_array_to_dataframe(array, columns):
     '''Take a numpy array and convert it into a pandas dataframe'''
