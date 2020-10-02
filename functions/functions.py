@@ -94,11 +94,11 @@ def best_model_score(clf, param_grid, X_train, y_train, X_test, y_test, scoring=
     
     # Best F1 Score
     best_f1 = f1_score(y_test, y_pred)
-    print('Best Test Data F1 score: {}'.format(round(best_f1, 5)))
+    print('Best Test Data F1 score: \t{}'.format(round(best_f1, 5)))
     
     # Best Recall Score
     best_recall = recall_score(y_test, y_pred)
-    print('Best Test Data Recall score: {}'.format(round(best_recall, 5)))
+    print('Best Test Data Recall score: \t{}'.format(round(best_recall, 5)))
     
     # Best Parameters
     if len(param_grid):
@@ -162,7 +162,6 @@ def custom_confusion_matrix(y_test, y_pred, model_name, resample_name, save_fig=
     plt.title('Confusion Matrix: {} Model\n(training data {})\n'.format(model_name, resample_name))
     plt.xlabel('true label')
     plt.ylabel('predicted label')
-    plt.savefig('cm_rf_smote')
 
     tn, fp, fn, tp = confusion_matrix(y_test, y_pred).ravel()
     print("Confusion Matrix:",'\nTN:', tn, 'FP:', fp, 'FN:', fn, 'TP:', tp)
@@ -205,8 +204,8 @@ def scores_bar_plot(df, metric, figsize=(15,10)):
 def plot_pr_curve(y_test, y_pred, y_pred_proba, title, save_fig=True):
     '''Plot the Precision-Recall Curve of a model'''
     
-    # keep probabilities for the fraud outcome only
-    y_pred_proba = y_pred_proba[:,1]
+#     # keep probabilities for the fraud outcome only
+#     y_pred_proba = y_pred_proba[:,1]
     
     # Calculate Precision and Recall values
     precision_scores, recall_scores, _ = precision_recall_curve(y_test, y_pred_proba)
