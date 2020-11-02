@@ -36,7 +36,7 @@ The **best performing model and resampling combination overall was using Random 
 |----------------------|----------|--------|--------|--------|--------|---------|--------|
 |Random Forest & SMOTE |  0.880   | 0.865  |  0.882 | 0.150% | 0.018% | 99.809% | 0.023% |
 
-The following confusio matrix has the absolute values for the best model combination:
+The following confusion matrix has the absolute values for the best model combination:
 [CM RF SMOTE](visuals/cm_rf_smote.pdf)
 
 The charts below compare F1 and Recall scores across the different combinations.  
