@@ -1,6 +1,5 @@
 # Catching Credit Card Fraud
 
-Authors: Adam Blomfield
 
 ## Overview
 
