@@ -3,7 +3,6 @@
 ## TL;DR
 Resampling the data with SMOTE and using a Random Forest Classifier produced the highest F1 Score. Gridsearch to find more optimal hyperparameters
 
-
 ## Overview
 
 In this **classification project**, we trained **3 machine learning models** to classify credit-card transactions as fraudulent or non-fraudulent.  The **data was resampled with both under and over sampling techniques**, and each model was fitted to each resampled dataset.  See the notebooks directory for data cleaning and predictive modelling code.
