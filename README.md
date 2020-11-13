@@ -1,7 +1,7 @@
 # Catching Credit Card Fraud
 
 ## TL;DR
-Resampling the data with SMOTE and using a Random Forest Classifier produced the highest F1 Score. Gridsearch to find more optimal hyperparameters
+Resampling the data with SMOTE and using a Random Forest Classifier produced the highest F1 Score. Gridsearch to find more optimal hyperparameters.
 
 ## Overview
 
